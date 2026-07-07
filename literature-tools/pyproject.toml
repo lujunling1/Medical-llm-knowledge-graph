@@ -1,0 +1,31 @@
+[project]
+name = "literature-tools"
+version = "0.1.0"
+description = "Utilities for literature deduplication, metadata enrichment, journal metrics, validation, and plotting."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "openpyxl>=3.1",
+    "pandas>=2.0",
+    "plotly>=5.20",
+    "rapidfuzz>=3.6",
+    "requests>=2.31",
+    "scikit-learn>=1.4",
+    "seaborn>=0.13",
+    "tqdm>=4.66",
+]
+
+[project.scripts]
+lit-tools = "lit_review_tools.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

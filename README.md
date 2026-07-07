@@ -5,3 +5,4 @@ This repository is intended to collect code for medical LLM knowledge graph work
 Current modules:
 
 - `ai-knowledge-graph/`: lightweight knowledge graph extraction and JSON-saving framework.
+- `literature-tools/`: consolidated literature deduplication, metadata enrichment, journal metrics, validation, and plotting utilities.
