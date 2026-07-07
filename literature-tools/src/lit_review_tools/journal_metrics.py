@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from io import BytesIO
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -14,11 +15,6 @@ try:
 except ImportError:  # pragma: no cover - exercised when optional speedup is unavailable
     fuzz = None
     process = None
-
-REFERENCE_URL = (
-    "https://github.com/Satyajeet1396/ImpactFactorFinder/raw/"
-    "c48c0176e314f05e25f7a7c219f67ab9ab6d5237/IF2025JCR.xlsx"
-)
 
 JOURNAL_REPLACEMENTS = {
     "intl": "international",
@@ -60,10 +56,12 @@ def standardize_journal_name(value: object) -> str:
     return " ".join(text.split())
 
 
-def load_reference_df(url: str = REFERENCE_URL) -> pd.DataFrame:
-    response = requests.get(url, timeout=30)
-    response.raise_for_status()
-    return pd.read_excel(BytesIO(response.content), engine="openpyxl")
+def load_reference_df(source: str) -> pd.DataFrame:
+    if source.startswith(("http://", "https://")):
+        response = requests.get(source, timeout=30)
+        response.raise_for_status()
+        return pd.read_excel(BytesIO(response.content), engine="openpyxl")
+    return pd.read_excel(Path(source), engine="openpyxl")
 
 
 def build_reference_index(ref_df: pd.DataFrame) -> tuple[dict[str, list[dict]], list[str]]:

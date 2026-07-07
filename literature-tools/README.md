@@ -1,8 +1,10 @@
 # Literature Tools
 
-This folder consolidates reusable code from the literature validation and analysis scripts.
+Python version:
 
-It keeps code only. Local spreadsheets, generated charts, HTML files, PDFs, and one-off outputs are not included.
+```text
+Python 3.13.11
+```
 
 ## Install
 
@@ -34,7 +36,7 @@ lit-tools enrich-openalex --input input.xlsx --output outputs/enriched.xlsx --ti
 Match journal names to JCR impact factor data:
 
 ```bash
-lit-tools journal-if --input input.xlsx --output outputs/journal_if.xlsx
+lit-tools journal-if --input input.xlsx --reference reference/jcr.xlsx --output outputs/journal_if.xlsx
 ```
 
 Evaluate model extraction output against manual annotations:

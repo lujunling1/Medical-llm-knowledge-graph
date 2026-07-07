@@ -42,7 +42,7 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("journal-if", help="Match journal names to JCR impact factor data.")
     p.add_argument("--input", required=True)
     p.add_argument("--output", required=True)
-    p.add_argument("--reference")
+    p.add_argument("--reference", required=True, help="JCR/reference table path or URL.")
     p.add_argument("--cutoff", type=int, default=90)
 
     p = sub.add_parser("validate-llm", help="Evaluate model extraction output against manual annotations.")
@@ -81,7 +81,7 @@ def main(argv: list[str] | None = None) -> None:
         write_table(out, args.output)
     elif args.command == "journal-if":
         user_df = read_table(args.input)
-        ref_df = read_table(args.reference) if args.reference else load_reference_df()
+        ref_df = load_reference_df(args.reference)
         out = match_journals(user_df, ref_df, args.cutoff)
         write_table(out, args.output)
         stats_path = Path(args.output).with_suffix(".stats.json")
