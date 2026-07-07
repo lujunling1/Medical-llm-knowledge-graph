@@ -1,0 +1,33 @@
+__pycache__/
+*.py[cod]
+node_modules/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Secrets and local configuration
+.env
+config.toml
+
+# Generated knowledge graph outputs
+outputs/
+*.html
+*_graph.json
+*_triples.json
+*_node_dois.json
+*_metadata.json
+
+# Local datasets and office files
+data/
+*.xlsx
+*.xls
+*.csv
+*.pdf
+
+# Keep public example templates
+!examples/*.xlsx

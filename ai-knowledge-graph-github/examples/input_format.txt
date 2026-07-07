@@ -1,0 +1,40 @@
+Simple text input format
+========================
+
+Use a UTF-8 .txt file.
+
+For one document:
+
+Document title: Your title here.
+Document abstract: Your abstract or source text here.
+
+
+For multiple documents, put this exact boundary line between documents:
+
+===== DOCUMENT BOUNDARY =====
+
+
+Example:
+
+Document 1 title: First paper title.
+Document 1 abstract: First paper abstract.
+
+===== DOCUMENT BOUNDARY =====
+
+Document 2 title: Second paper title.
+Document 2 abstract: Second paper abstract.
+
+
+Optional DOI map
+================
+
+If each document has a DOI, create a JSON file with 1-based document numbers:
+
+{
+  "1": "10.xxxx/first-doi",
+  "2": "10.xxxx/second-doi"
+}
+
+Run:
+
+kg-build --config config.toml --input examples/sample_input.txt --doi-map examples/sample_doi_map.json --schema generic --output-dir outputs --name sample

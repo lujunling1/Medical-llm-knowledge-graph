@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+node_modules/
+dist/
+build/
+*.egg-info/
+
+# Secrets and local configuration
+.env
+config.toml
+**/config.toml
+
+# Generated outputs
+outputs/
+**/outputs/
+*.html
+*_graph.json
+*_triples.json
+*_node_dois.json
+*_metadata.json
+
+# Local datasets and large working files
+data/
+**/data/
+*.pdf

@@ -1,0 +1,7 @@
+Document 1 title: Example study on clinical question answering.
+Document 1 abstract: Large language models were evaluated for clinical question answering using MedQA. The study measured accuracy and compared model outputs with physician answers.
+
+===== DOCUMENT BOUNDARY =====
+
+Document 2 title: Example study on report summarization.
+Document 2 abstract: A language model was tested for radiology report summarization. The evaluation used expert review and measured factual consistency.

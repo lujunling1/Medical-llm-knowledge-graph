@@ -1,0 +1,28 @@
+[project]
+name = "medical-llm-knowledge-graph"
+version = "0.1.0"
+description = "Build and save knowledge graphs from biomedical LLM evaluation texts."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+excel = [
+    "pandas>=2.0.0",
+    "openpyxl>=3.1.0",
+]
+
+[project.scripts]
+kg-build = "kg_builder.cli:main"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
