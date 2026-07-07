@@ -5,5 +5,3 @@ This repository is intended to collect code for medical LLM knowledge graph work
 Current modules:
 
 - `ai-knowledge-graph/`: lightweight knowledge graph extraction and JSON-saving framework.
-
-Additional project code can be added as sibling folders under this repository root.
