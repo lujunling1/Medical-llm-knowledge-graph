@@ -169,9 +169,3 @@ prompts/
   med_llm.txt     empty template for task-specific medical LLM extraction prompts
   generic.txt     reusable generic SPO extraction prompt
 ```
-
-## Notes
-
-- This repository does not contain generated HTML, PDFs, Excel data, or local experiment outputs.
-- `outputs/`, office files, and local datasets are ignored by git.
-- The default schema is `med-llm`; use `--schema generic` for plain S-P-O extraction.
