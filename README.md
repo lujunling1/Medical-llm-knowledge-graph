@@ -12,13 +12,14 @@ Python 3.13.11
 
 - `ai-knowledge-graph/`: knowledge graph extraction and JSON storage.
 - `literature-tools/`: literature deduplication, metadata enrichment, and journal metrics utilities.
-- Knowledge graph validation and plotting: validation and summary plotting commands in `literature-tools/`.
+- `knowledge-graph-validation-plots/`: knowledge graph validation and related plotting utilities.
 
 ## Project Structure
 
 ```text
 medical-llm-knowledge-graph/
   ai-knowledge-graph/
+  knowledge-graph-validation-plots/
   literature-tools/
   README.md
 ```
@@ -72,9 +73,16 @@ lit-tools journal-if --input input.xlsx --reference reference/jcr.xlsx --output 
 
 ## 知识图谱的验证与有关绘图
 
+Install:
+
+```bash
+cd knowledge-graph-validation-plots
+pip install -e .
+```
+
 Commands:
 
 ```bash
-lit-tools validate-llm --manual manual.xlsx --model model.xlsx --output outputs/validation.xlsx
-lit-tools plot-summary --input input.xlsx --output-dir outputs/figures
+kg-validation validate-llm --manual manual.xlsx --model model.xlsx --output outputs/validation.xlsx
+kg-validation plot-summary --input input.xlsx --output-dir outputs/figures
 ```

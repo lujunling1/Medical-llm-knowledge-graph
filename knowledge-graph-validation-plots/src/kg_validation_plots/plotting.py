@@ -9,7 +9,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from .common import choose_column, split_values
+from .common import choose_column
 
 
 def set_style() -> None:

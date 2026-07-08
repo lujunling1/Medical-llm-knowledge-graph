@@ -49,23 +49,3 @@ src/lit_review_tools/
   openalex.py         DOI, citation, date, and id enrichment
   journal_metrics.py  journal impact factor matching
 ```
-
-## 知识图谱的验证与有关绘图
-
-Evaluate model extraction output against manual annotations:
-
-```bash
-lit-tools validate-llm --manual manual.xlsx --model model.xlsx --output outputs/validation.xlsx
-```
-
-Create basic descriptive plots from a cleaned literature table:
-
-```bash
-lit-tools plot-summary --input input.xlsx --output-dir outputs/figures
-```
-
-```text
-src/lit_review_tools/
-  validation.py       manual vs model extraction evaluation
-  plotting.py         reusable summary chart functions
-```

@@ -1,20 +1,19 @@
 [project]
-name = "literature-tools"
+name = "knowledge-graph-validation-plots"
 version = "0.1.0"
-description = "Utilities for literature deduplication, metadata enrichment, and journal metrics."
+description = "Knowledge graph validation and summary plotting utilities."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "matplotlib>=3.8",
     "numpy>=1.26",
     "openpyxl>=3.1",
     "pandas>=2.0",
-    "rapidfuzz>=3.6",
-    "requests>=2.31",
-    "tqdm>=4.66",
+    "scikit-learn>=1.4",
 ]
 
 [project.scripts]
-lit-tools = "lit_review_tools.cli:main"
+kg-validation = "kg_validation_plots.cli:main"
 
 [build-system]
 requires = ["setuptools>=68"]
