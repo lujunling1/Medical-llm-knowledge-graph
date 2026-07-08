@@ -24,6 +24,38 @@ medical-llm-knowledge-graph/
   README.md
 ```
 
+## Code File Overview
+
+| Module | Code file | Main function |
+| --- | --- | --- |
+| `ai-knowledge-graph` | `src/kg_builder/cli.py` | Command line entry point for `kg-build`; reads arguments, loads input documents, runs extraction, deduplicates triples, and saves JSON graph files. |
+| `ai-knowledge-graph` | `src/kg_builder/config.py` | Loads TOML configuration, reads the API key from an environment variable, and builds runtime configuration objects. |
+| `ai-knowledge-graph` | `src/kg_builder/extraction.py` | Splits text into chunks, calls the LLM extraction flow, supports `generic` SPO extraction and `med-llm` schema conversion. |
+| `ai-knowledge-graph` | `src/kg_builder/inputs.py` | Loads UTF-8 text files, multi-document text boundaries, DOI maps, and optional Excel input columns. |
+| `ai-knowledge-graph` | `src/kg_builder/llm.py` | Minimal OpenAI-compatible chat API client with retry logic and JSON extraction from LLM responses. |
+| `ai-knowledge-graph` | `src/kg_builder/models.py` | Defines `Triple` and `KnowledgeGraph`, including triple serialization, deduplication, node counts, and node-to-DOI mapping. |
+| `ai-knowledge-graph` | `src/kg_builder/normalize.py` | Normalizes DOI values, entity type suffixes, predicates, and triple text before saving. |
+| `ai-knowledge-graph` | `src/kg_builder/prompt_loader.py` | Reads external prompt files with `[system]` and `[user]` sections and checks that `{text}` is present. |
+| `ai-knowledge-graph` | `src/kg_builder/storage.py` | Writes graph JSON, node DOI JSON, and run metadata JSON to the selected output folder. |
+| `ai-knowledge-graph` | `src/kg_builder/__init__.py` | Package marker for the knowledge graph builder Python package. |
+| `ai-knowledge-graph` | `config.example.toml` | Example runtime configuration for model, API endpoint, prompt paths, chunking, and deduplication settings. |
+| `ai-knowledge-graph` | `prompts/generic.txt` | Ready-to-use generic Subject-Predicate-Object extraction prompt. |
+| `ai-knowledge-graph` | `prompts/med_llm.txt` | Empty medical LLM prompt template; users must fill it according to their own extraction task. |
+| `ai-knowledge-graph` | `pyproject.toml` | Package metadata, dependencies, optional Excel dependencies, and `kg-build` command registration. |
+| `literature-tools` | `src/lit_review_tools/cli.py` | Command line entry point for `lit-tools`; dispatches deduplication, DOI mapping, OpenAlex enrichment, and journal matching commands. |
+| `literature-tools` | `src/lit_review_tools/common.py` | Shared table I/O, text normalization, DOI/PMID normalization, column selection, value splitting, and number parsing helpers. |
+| `literature-tools` | `src/lit_review_tools/deduplication.py` | Removes duplicates and empty rows by normalized columns and writes deduplicated data, logs, and removed rows. |
+| `literature-tools` | `src/lit_review_tools/openalex.py` | Queries OpenAlex by DOI, PMID, or title; recovers DOI values and enriches records with citation count, publication month, and OpenAlex ID. |
+| `literature-tools` | `src/lit_review_tools/journal_metrics.py` | Standardizes journal names, matches them to a JCR/reference table, adds impact factor and quartile fields, and outputs match statistics. |
+| `literature-tools` | `src/lit_review_tools/__init__.py` | Package marker for the literature tools Python package. |
+| `literature-tools` | `pyproject.toml` | Package metadata, dependencies, and `lit-tools` command registration. |
+| `knowledge-graph-validation-plots` | `src/kg_validation_plots/cli.py` | Command line entry point for `kg-validation`; dispatches validation and plotting commands. |
+| `knowledge-graph-validation-plots` | `src/kg_validation_plots/common.py` | Shared table reading, table writing, and flexible column selection helpers for validation and plotting. |
+| `knowledge-graph-validation-plots` | `src/kg_validation_plots/validation.py` | Compares manual annotations with model extraction output using exact precision/recall/F1 and TF-IDF semantic precision/recall/F1. |
+| `knowledge-graph-validation-plots` | `src/kg_validation_plots/plotting.py` | Creates top-category horizontal bar charts and quarterly trend line charts from cleaned knowledge graph or literature tables. |
+| `knowledge-graph-validation-plots` | `src/kg_validation_plots/__init__.py` | Package marker for the validation and plotting Python package. |
+| `knowledge-graph-validation-plots` | `pyproject.toml` | Package metadata, dependencies, and `kg-validation` command registration. |
+
 ## ai-knowledge-graph
 
 Install:
