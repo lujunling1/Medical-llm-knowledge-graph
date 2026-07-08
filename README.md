@@ -11,7 +11,8 @@ Python 3.13.11
 ## Modules
 
 - `ai-knowledge-graph/`: knowledge graph extraction and JSON storage.
-- `literature-tools/`: literature deduplication, metadata enrichment, journal metrics, validation, and plotting utilities.
+- `literature-tools/`: literature deduplication, metadata enrichment, and journal metrics utilities.
+- Knowledge graph validation and plotting: validation and summary plotting commands in `literature-tools/`.
 
 ## Project Structure
 
@@ -67,6 +68,13 @@ lit-tools dedup --input input.xlsx --output outputs/deduped.xlsx --columns TI DI
 lit-tools doi-map --input input.xlsx --output outputs/doi_mapped.xlsx --pmid-col PMID --doi-col DI
 lit-tools enrich-openalex --input input.xlsx --output outputs/enriched.xlsx --title-col TI --doi-col DI --pmid-col PMID
 lit-tools journal-if --input input.xlsx --reference reference/jcr.xlsx --output outputs/journal_if.xlsx
+```
+
+## 知识图谱的验证与有关绘图
+
+Commands:
+
+```bash
 lit-tools validate-llm --manual manual.xlsx --model model.xlsx --output outputs/validation.xlsx
 lit-tools plot-summary --input input.xlsx --output-dir outputs/figures
 ```

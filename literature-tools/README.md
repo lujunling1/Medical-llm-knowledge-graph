@@ -39,6 +39,19 @@ Match journal names to JCR impact factor data:
 lit-tools journal-if --input input.xlsx --reference reference/jcr.xlsx --output outputs/journal_if.xlsx
 ```
 
+## Organization
+
+```text
+src/lit_review_tools/
+  cli.py              unified command line interface
+  common.py           shared table loading, text cleaning, DOI helpers
+  deduplication.py    duplicate and empty-value quality control
+  openalex.py         DOI, citation, date, and id enrichment
+  journal_metrics.py  journal impact factor matching
+```
+
+## 知识图谱的验证与有关绘图
+
 Evaluate model extraction output against manual annotations:
 
 ```bash
@@ -51,15 +64,8 @@ Create basic descriptive plots from a cleaned literature table:
 lit-tools plot-summary --input input.xlsx --output-dir outputs/figures
 ```
 
-## Organization
-
 ```text
 src/lit_review_tools/
-  cli.py              unified command line interface
-  common.py           shared table loading, text cleaning, DOI helpers
-  deduplication.py    duplicate and empty-value quality control
-  openalex.py         DOI, citation, date, and id enrichment
-  journal_metrics.py  journal impact factor matching
   validation.py       manual vs model extraction evaluation
   plotting.py         reusable summary chart functions
 ```
