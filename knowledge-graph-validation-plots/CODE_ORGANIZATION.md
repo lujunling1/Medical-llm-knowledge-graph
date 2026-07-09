@@ -4,5 +4,6 @@
 
 | Function area | Module | Main command |
 | --- | --- | --- |
-| Manual vs model LLM validation scripts | `main.py` | `kg-validation validate-llm` |
-| Validation-result plotting scripts | `main.py` | `kg-validation plot-validation` |
+| Manual vs model LLM validation scripts | `validation.py` | `kg-validation validate-llm` |
+| Validation-result plotting scripts | `plotting.py` | `kg-validation plot-validation` |
+| Command line interface | `cli.py` | `kg-validation` |

@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-kg-validation = "kg_validation_plots.main:main"
+kg-validation = "kg_validation_plots.cli:main"
 
 [build-system]
 requires = ["setuptools>=68"]

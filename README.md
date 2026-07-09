@@ -49,7 +49,10 @@ medical-llm-knowledge-graph/
 | `literature-tools` | `src/lit_review_tools/journal_metrics.py` | Standardizes journal names, matches them to a JCR/reference table, adds impact factor and quartile fields, and outputs match statistics. |
 | `literature-tools` | `src/lit_review_tools/__init__.py` | Package marker for the literature tools Python package. |
 | `literature-tools` | `pyproject.toml` | Package metadata, dependencies, and `lit-tools` command registration. |
-| `knowledge-graph-validation-plots` | `src/kg_validation_plots/main.py` | Knowledge graph validation code: reads tables, compares manual annotations with model extraction output, calculates exact and semantic precision/recall/F1, and draws validation-result charts. |
+| `knowledge-graph-validation-plots` | `src/kg_validation_plots/cli.py` | Command line entry point for `kg-validation`; dispatches validation and validation-result chart commands. |
+| `knowledge-graph-validation-plots` | `src/kg_validation_plots/common.py` | Shared table reading and writing helpers for validation inputs and outputs. |
+| `knowledge-graph-validation-plots` | `src/kg_validation_plots/validation.py` | Compares manual annotations with model extraction output and calculates exact and semantic precision/recall/F1. |
+| `knowledge-graph-validation-plots` | `src/kg_validation_plots/plotting.py` | Draws validation-result charts for exact scores, semantic scores, and manual-vs-model entity counts. |
 | `knowledge-graph-validation-plots` | `src/kg_validation_plots/__init__.py` | Package marker for the validation and plotting Python package. |
 | `knowledge-graph-validation-plots` | `pyproject.toml` | Package metadata, dependencies, and `kg-validation` command registration. |
 

@@ -6,7 +6,7 @@ Python version:
 Python 3.13.11
 ```
 
-This folder contains a combined code file for knowledge graph extraction validation.
+This folder contains modular code for knowledge graph extraction validation.
 The plotting functions draw validation-result charts.
 
 ## Install
@@ -48,5 +48,8 @@ validation_entity_counts.png
 
 ```text
 src/kg_validation_plots/
-  main.py        validation, validation-result plotting, table I/O, and command line interface
+  cli.py          command line interface
+  common.py       table reading and writing helpers
+  validation.py   manual vs model extraction evaluation
+  plotting.py     validation-result chart functions
 ```
