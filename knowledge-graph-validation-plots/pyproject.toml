@@ -1,7 +1,7 @@
 [project]
 name = "knowledge-graph-validation-plots"
 version = "0.1.0"
-description = "Knowledge graph validation and summary plotting utilities."
+description = "Knowledge graph validation utilities with validation-result charts."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-kg-validation = "kg_validation_plots.cli:main"
+kg-validation = "kg_validation_plots.main:main"
 
 [build-system]
 requires = ["setuptools>=68"]

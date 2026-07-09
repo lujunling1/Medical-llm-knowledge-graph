@@ -1,4 +1,4 @@
-# Knowledge Graph Validation and Plots
+# Knowledge Graph Validation
 
 Python version:
 
@@ -6,7 +6,8 @@ Python version:
 Python 3.13.11
 ```
 
-This folder contains the knowledge graph validation and related plotting code.
+This folder contains one combined code file for knowledge graph extraction validation.
+The plotting functions only draw validation-result charts.
 
 ## Install
 
@@ -23,18 +24,29 @@ Evaluate model extraction output against manual annotations:
 kg-validation validate-llm --manual manual.xlsx --model model.xlsx --output outputs/validation.xlsx
 ```
 
-Create basic descriptive plots from a cleaned knowledge graph or literature table:
+Evaluate and create validation charts in the same run:
 
 ```bash
-kg-validation plot-summary --input input.xlsx --output-dir outputs/figures
+kg-validation validate-llm --manual manual.xlsx --model model.xlsx --output outputs/validation.xlsx --plot-dir outputs/validation_figures
+```
+
+Create validation charts from an existing validation result table:
+
+```bash
+kg-validation plot-validation --input outputs/validation.xlsx --output-dir outputs/validation_figures
+```
+
+The chart command writes:
+
+```text
+exact_validation_scores.png
+semantic_validation_scores.png
+validation_entity_counts.png
 ```
 
 ## Organization
 
 ```text
 src/kg_validation_plots/
-  cli.py          command line interface
-  common.py       shared table loading and column helpers
-  validation.py   manual vs model extraction evaluation
-  plotting.py     reusable summary chart functions
+  main.py        validation, validation-result plotting, table I/O, and command line interface
 ```

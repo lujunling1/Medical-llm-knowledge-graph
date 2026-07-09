@@ -4,5 +4,5 @@
 
 | Source script group | Consolidated module | Main command |
 | --- | --- | --- |
-| Manual vs model LLM validation scripts | `validation.py` | `kg-validation validate-llm` |
-| Repeated summary plotting scripts | `plotting.py` | `kg-validation plot-summary` |
+| Manual vs model LLM validation scripts | `main.py` | `kg-validation validate-llm` |
+| Validation-result plotting scripts | `main.py` | `kg-validation plot-validation` |

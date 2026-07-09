@@ -49,10 +49,7 @@ medical-llm-knowledge-graph/
 | `literature-tools` | `src/lit_review_tools/journal_metrics.py` | Standardizes journal names, matches them to a JCR/reference table, adds impact factor and quartile fields, and outputs match statistics. |
 | `literature-tools` | `src/lit_review_tools/__init__.py` | Package marker for the literature tools Python package. |
 | `literature-tools` | `pyproject.toml` | Package metadata, dependencies, and `lit-tools` command registration. |
-| `knowledge-graph-validation-plots` | `src/kg_validation_plots/cli.py` | Command line entry point for `kg-validation`; dispatches validation and plotting commands. |
-| `knowledge-graph-validation-plots` | `src/kg_validation_plots/common.py` | Shared table reading, table writing, and flexible column selection helpers for validation and plotting. |
-| `knowledge-graph-validation-plots` | `src/kg_validation_plots/validation.py` | Compares manual annotations with model extraction output using exact precision/recall/F1 and TF-IDF semantic precision/recall/F1. |
-| `knowledge-graph-validation-plots` | `src/kg_validation_plots/plotting.py` | Creates top-category horizontal bar charts and quarterly trend line charts from cleaned knowledge graph or literature tables. |
+| `knowledge-graph-validation-plots` | `src/kg_validation_plots/main.py` | Combined validation code: reads tables, compares manual annotations with model extraction output, calculates exact and semantic precision/recall/F1, and draws validation-result charts only. |
 | `knowledge-graph-validation-plots` | `src/kg_validation_plots/__init__.py` | Package marker for the validation and plotting Python package. |
 | `knowledge-graph-validation-plots` | `pyproject.toml` | Package metadata, dependencies, and `kg-validation` command registration. |
 
@@ -116,5 +113,5 @@ Commands:
 
 ```bash
 kg-validation validate-llm --manual manual.xlsx --model model.xlsx --output outputs/validation.xlsx
-kg-validation plot-summary --input input.xlsx --output-dir outputs/figures
+kg-validation plot-validation --input outputs/validation.xlsx --output-dir outputs/validation_figures
 ```
