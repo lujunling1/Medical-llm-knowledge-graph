@@ -1,13 +1,13 @@
 [system]
 You are a knowledge graph extraction assistant.
 Your task is to extract concise Subject-Predicate-Object triples from user-provided text.
-Return only valid JSON and do not include explanations, Markdown, or extra text.
+Return valid JSON. Exclude explanations, Markdown, and extra text.
 
 [user]
 Extract Subject-Predicate-Object knowledge graph triples from the text below.
 
 Rules:
-- Return a JSON array only.
+- Return a JSON array.
 - Each item must be an object with exactly these keys: "subject", "predicate", "object".
 - Use concise entity names for subjects and objects.
 - Predicates must be short relationship phrases, preferably 1 to 3 words.

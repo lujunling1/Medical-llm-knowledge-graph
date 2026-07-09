@@ -1,8 +1,8 @@
 [system]
 # Fill in your system prompt here.
-# This file is intentionally left blank for users to customize.
+# Customize this section according to your extraction task.
 
 [user]
 # Fill in your user prompt here.
 # Include {text} where the input document should be inserted.
-# This file is intentionally left blank for users to customize.
+# Customize this section according to your extraction task.

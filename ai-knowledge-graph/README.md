@@ -1,14 +1,12 @@
 # Medical LLM Knowledge Graph Builder
 
-This is a lightweight GitHub-ready version of a knowledge graph extraction pipeline.
-It keeps only the core data workflow:
+This module builds knowledge graph JSON artifacts from medical LLM literature text.
+The workflow covers:
 
 1. Load text documents or Excel abstracts.
 2. Call an OpenAI-compatible chat API.
 3. Convert extracted entities into knowledge graph triples.
 4. Save JSON graph artifacts.
-
-This version intentionally does not generate HTML visualizations and does not include local experiment outputs.
 
 ## Features
 
@@ -23,8 +21,8 @@ This version intentionally does not generate HTML visualizations and does not in
 - DOI tracking at triple and node level.
 - Text input with multi-document boundaries.
 - Optional Excel input for abstract and DOI columns.
-- Prompt files are loaded from `prompts/`; the generic SPO prompt is provided, while task-specific prompts should be filled by the user.
-- No API keys committed to the repository.
+- Prompt files are loaded from `prompts/`; the generic SPO prompt is provided, and task-specific prompts can be filled by the user.
+- API keys are read from local environment variables.
 
 ## Install
 
@@ -49,7 +47,7 @@ copy config.example.toml config.toml
 set OPENAI_API_KEY=your_api_key_here
 ```
 
-`config.toml` is ignored by git so secrets are not uploaded.
+`config.toml` is a local runtime configuration file for environment-specific settings.
 
 Prompt files are configured in `config.toml`:
 
@@ -69,7 +67,7 @@ Write your system prompt here.
 Write your user prompt here. Use {text} where the document text should be inserted.
 ```
 
-`prompts/generic.txt` contains a reusable generic SPO extraction prompt. Task-specific templates such as `prompts/med_llm.txt` are intentionally empty; fill in both sections according to your own task before using that schema. The program will stop with a clear error if either section is blank or if `{text}` is missing.
+`prompts/generic.txt` contains a reusable generic SPO extraction prompt. Task-specific templates such as `prompts/med_llm.txt` are customizable; fill in both sections according to your own task before using that schema. The program will stop with a clear error if either section is blank or if `{text}` is missing.
 
 ## Run With Text
 
@@ -166,6 +164,6 @@ src/kg_builder/
   prompt_loader.py prompt file reader
   storage.py      JSON output writers
 prompts/
-  med_llm.txt     empty template for task-specific medical LLM extraction prompts
+  med_llm.txt     customizable template for task-specific medical LLM extraction prompts
   generic.txt     reusable generic SPO extraction prompt
 ```

@@ -6,8 +6,8 @@ Python version:
 Python 3.13.11
 ```
 
-This folder contains one combined code file for knowledge graph extraction validation.
-The plotting functions only draw validation-result charts.
+This folder contains a combined code file for knowledge graph extraction validation.
+The plotting functions draw validation-result charts.
 
 ## Install
 

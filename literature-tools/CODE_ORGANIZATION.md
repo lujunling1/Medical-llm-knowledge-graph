@@ -1,10 +1,10 @@
 # Code Organization
 
-This module consolidates the reusable code into a smaller set of maintained functions.
+This module provides literature deduplication, metadata enrichment, and journal metric matching functions.
 
-## Consolidated Functions
+## Functions
 
-| Source script group | Consolidated module | Main command |
+| Function area | Module | Main command |
 | --- | --- | --- |
 | Deduplication and quality control scripts | `deduplication.py` | `lit-tools dedup` |
 | DOI normalization and PMID/DOI recovery scripts | `openalex.py` | `lit-tools doi-map` |
